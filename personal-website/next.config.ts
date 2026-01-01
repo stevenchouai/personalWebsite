@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
     unoptimized: true,  // GitHub Pages 不支持 Next.js 图片优化
   },
   // 生产环境使用仓库名作为 basePath
-  basePath: process.env.NODE_ENV === 'production' ? '/personal-website' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/personal-website' : '',
+  basePath: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
   pageExtensions: ["ts", "tsx", "md", "mdx"],
 };
 
