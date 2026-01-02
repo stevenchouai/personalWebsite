@@ -116,19 +116,25 @@ export default function ResumePage() {
               </div>
             </Item>
 
-            <Item title="Links (template)">
+            <Item title="Links">
               <ul className="space-y-1">
                 <li>
                   <span className="text-[var(--muted-2)]">GitHub:</span>{" "}
-                  <span className="text-[var(--muted)]">
-                    add-your-github-here
-                  </span>
+                  <a className="link-accent" href="https://github.com/stevenchouai" target="_blank" rel="noopener noreferrer">
+                    stevenchouai
+                  </a>
                 </li>
                 <li>
-                  <span className="text-[var(--muted-2)]">LinkedIn:</span>{" "}
-                  <span className="text-[var(--muted)]">
-                    add-your-linkedin-here
-                  </span>
+                  <span className="text-[var(--muted-2)]">CSDN Blog:</span>{" "}
+                  <a className="link-accent" href={contact.blog} target="_blank" rel="noopener noreferrer">
+                    StevenChou.AI
+                  </a>
+                </li>
+                <li>
+                  <span className="text-[var(--muted-2)]">Email:</span>{" "}
+                  <a className="link-accent" href={`mailto:${contact.email}`}>
+                    {contact.email}
+                  </a>
                 </li>
               </ul>
             </Item>

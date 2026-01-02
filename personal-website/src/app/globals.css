@@ -2,20 +2,20 @@
 @plugin "@tailwindcss/typography";
 
 :root {
-  /* Warm light theme */
-  --background: #fff7ed; /* amber-50-ish */
-  --foreground: #1f2937; /* gray-800 */
+  /* Blue and white theme */
+  --background: #f0f9ff; /* sky-50 */
+  --foreground: #0f172a; /* slate-900 */
 
   --card: #ffffff;
-  --card-2: #fff1e0;
-  --border: rgba(31, 41, 55, 0.12);
+  --card-2: #e0f2fe; /* sky-100 */
+  --border: rgba(15, 23, 42, 0.12);
 
-  --muted: rgba(31, 41, 55, 0.72);
-  --muted-2: rgba(31, 41, 55, 0.56);
+  --muted: rgba(15, 23, 42, 0.72);
+  --muted-2: rgba(15, 23, 42, 0.56);
 
-  --accent: #f97316; /* orange-500 */
-  --accent-2: #ea580c; /* orange-600 */
-  --ring: rgba(249, 115, 22, 0.35);
+  --accent: #0ea5e9; /* sky-500 */
+  --accent-2: #0284c7; /* sky-600 */
+  --ring: rgba(14, 165, 233, 0.35);
 }
 
 @theme inline {
@@ -37,8 +37,8 @@ body {
 .app-shell {
   min-height: 100vh;
   background:
-    radial-gradient(1200px 600px at 15% 10%, rgba(249, 115, 22, 0.18), transparent 55%),
-    radial-gradient(900px 500px at 85% 20%, rgba(234, 88, 12, 0.12), transparent 60%),
+    radial-gradient(1200px 600px at 15% 10%, rgba(14, 165, 233, 0.18), transparent 55%),
+    radial-gradient(900px 500px at 85% 20%, rgba(2, 132, 199, 0.12), transparent 60%),
     linear-gradient(180deg, rgba(255, 255, 255, 0.65), rgba(255, 255, 255, 0));
 }
 
@@ -66,7 +66,7 @@ body {
   box-shadow:
     0 1px 0 rgba(31, 41, 55, 0.03),
     0 26px 80px rgba(15, 23, 42, 0.09);
-  border-color: rgba(249, 115, 22, 0.22);
+  border-color: rgba(14, 165, 233, 0.22);
 }
 
 .muted {
@@ -98,18 +98,18 @@ body {
 .btn-primary {
   background: linear-gradient(135deg, var(--accent), var(--accent-2));
   color: white;
-  border-color: rgba(234, 88, 12, 0.35);
-  box-shadow: 0 10px 26px rgba(234, 88, 12, 0.18);
+  border-color: rgba(2, 132, 199, 0.35);
+  box-shadow: 0 10px 26px rgba(2, 132, 199, 0.18);
 }
 .btn-primary:hover {
-  box-shadow: 0 14px 34px rgba(234, 88, 12, 0.22);
+  box-shadow: 0 14px 34px rgba(2, 132, 199, 0.22);
 }
 .btn-ghost {
   background: rgba(255, 255, 255, 0.55);
 }
 .btn-ghost:hover {
   background: rgba(255, 255, 255, 0.75);
-  border-color: rgba(249, 115, 22, 0.2);
+  border-color: rgba(14, 165, 233, 0.2);
 }
 
 .kbd {

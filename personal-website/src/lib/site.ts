@@ -14,8 +14,8 @@ export const site = {
 } as const;
 
 export const contact = {
-  // TODO: replace with your real email
-  email: "steven.chou@example.com",
+  email: "stevenchou.ai@gmail.com",
+  blog: "https://blog.csdn.net/weixin_53415043",
 } as const;
 
 

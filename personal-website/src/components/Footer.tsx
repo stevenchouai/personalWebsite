@@ -9,9 +9,9 @@ export function Footer() {
           © {new Date().getFullYear()} {site.name}. Built with Next.js.
         </div>
         <div className="flex flex-wrap items-center gap-3 text-sm">
-          <Link className="link-accent" href="/blog">
-            Blog
-          </Link>
+          <a className="link-accent" href={contact.blog} target="_blank" rel="noopener noreferrer">
+            CSDN Blog
+          </a>
           <Link className="link-accent" href="/resume">
             Resume
           </Link>

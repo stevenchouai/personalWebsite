@@ -15,7 +15,7 @@ export function Nav() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-black/5 bg-[color:rgba(255,247,237,0.78)] backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-black/5 bg-[color:rgba(240,249,255,0.78)] backdrop-blur">
       <a
         href="#content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 card px-4 py-2"
@@ -100,7 +100,7 @@ export function Nav() {
 
       {/* Mobile Menu */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-black/5 bg-[color:rgba(255,247,237,0.95)] backdrop-blur">
+        <div className="lg:hidden border-t border-black/5 bg-[color:rgba(240,249,255,0.95)] backdrop-blur">
           <nav className="container py-4 space-y-1">
             {site.nav.map((l) => {
               const active = isActive(pathname, l.href);
