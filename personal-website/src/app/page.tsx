@@ -113,6 +113,24 @@ export default function Home() {
             </div>
             <div className="lg:col-span-6">
               <CardLink
+                href="/projects"
+                title="Projects"
+                description="Repository statistics, technology stack, and development insights."
+                meta="GitHub integration"
+                className="h-full"
+              />
+            </div>
+            <div className="lg:col-span-6">
+              <CardLink
+                href="/commits"
+                title="Commits"
+                description="Detailed commit history with explanations for each change."
+                meta="Development timeline"
+                className="h-full"
+              />
+            </div>
+            <div className="lg:col-span-6">
+              <CardLink
                 href="/contact"
                 title="Contact"
                 description="Quick way to reach out for roles, consulting, or collaboration."
