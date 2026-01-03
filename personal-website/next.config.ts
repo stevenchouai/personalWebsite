@@ -9,15 +9,16 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,  // GitHub Pages 不支持 Next.js 图片优化
   },
-  // 生产环境使用仓库名作为 basePath
-  basePath: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
+  // For Vercel deployment, don't use basePath (Vercel handles routing)
+  // For GitHub Pages, use basePath
+  ...(process.env.VERCEL ? {} : {
+    basePath: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
+    assetPrefix: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
+  }),
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   
-  // Use webpack instead of turbopack for builds
-  webpack: (config) => {
-    return config;
-  },
+  // Empty turbopack config to silence the warning
+  turbopack: {},
 };
 
 export default nextConfig;
