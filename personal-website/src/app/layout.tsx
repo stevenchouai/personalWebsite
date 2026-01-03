@@ -23,6 +23,12 @@ export const metadata: Metadata = {
   description: site.description,
   applicationName: `${site.name} — ${site.title}`,
   metadataBase: new URL("http://localhost:3000"),
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+  },
   openGraph: {
     type: "website",
     title: `${site.name} — ${site.title}`,

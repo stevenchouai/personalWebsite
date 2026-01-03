@@ -113,6 +113,15 @@ export default function Home() {
             </div>
             <div className="lg:col-span-6">
               <CardLink
+                href="/tools/dca-calculator"
+                title="DCA Calculator"
+                description="Calculate your S&P 500 investment growth with dollar-cost averaging."
+                meta="Investment tool"
+                className="h-full"
+              />
+            </div>
+            <div className="lg:col-span-6">
+              <CardLink
                 href="/projects"
                 title="Projects"
                 description="Repository statistics, technology stack, and development insights."

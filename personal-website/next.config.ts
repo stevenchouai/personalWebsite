@@ -1,7 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  output: 'export',  // 启用静态导出以支持 GitHub Pages
+  // Only use static export for GitHub Pages build, not in development
+  // This allows API routes to work in development
+  ...(process.env.NEXT_PUBLIC_BUILD_MODE === 'static' && {
+    output: 'export',
+  }),
   images: {
     unoptimized: true,  // GitHub Pages 不支持 Next.js 图片优化
   },

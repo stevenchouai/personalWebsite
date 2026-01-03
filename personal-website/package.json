@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "next dev",
     "build": "cross-env TURBOPACK=0 next build",
+    "build:static": "cross-env TURBOPACK=0 NEXT_PUBLIC_BUILD_MODE=static next build",
     "start": "next start",
     "lint": "eslint"
   },
@@ -14,7 +15,9 @@
     "next-mdx-remote": "^5.0.0",
     "react": "19.2.3",
     "react-dom": "19.2.3",
-    "remark-gfm": "^4.0.1"
+    "recharts": "^3.6.0",
+    "remark-gfm": "^4.0.1",
+    "yahoo-finance2": "^3.11.2"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
