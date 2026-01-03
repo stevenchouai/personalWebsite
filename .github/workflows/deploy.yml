@@ -1,9 +1,14 @@
-name: Deploy to GitHub Pages
+name: Deploy to GitHub Pages (DISABLED - Use Vercel Instead)
+
+# DISABLED: This project uses API routes which require a Node.js server.
+# GitHub Pages only supports static sites.
+# Deploy to Vercel instead: https://vercel.com
 
 on:
-  push:
-    branches:
-      - main  # 当推送到 main 分支时触发部署
+  workflow_dispatch:  # Only run manually, not on push
+  # push:
+  #   branches:
+  #     - main
 
 permissions:
   contents: read
