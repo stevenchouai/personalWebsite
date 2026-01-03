@@ -518,7 +518,7 @@ export function DCACalculator() {
                   borderRadius: "8px",
                   padding: "12px",
                 }}
-                formatter={(value: number) => formatCurrency(value)}
+                formatter={(value: number | undefined) => value !== undefined ? formatCurrency(value) : ''}
               />
               <Legend />
               <Area
