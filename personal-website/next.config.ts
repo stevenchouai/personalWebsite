@@ -7,18 +7,15 @@ const nextConfig: NextConfig = {
     output: 'export',
   }),
   images: {
-    unoptimized: true,  // GitHub Pages 不支持 Next.js 图片优化
+    unoptimized: true,
   },
-  // For Vercel deployment, don't use basePath (Vercel handles routing)
-  // For GitHub Pages, use basePath
-  ...(process.env.VERCEL ? {} : {
-    basePath: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
-    assetPrefix: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
-  }),
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   
   // Empty turbopack config to silence the warning
   turbopack: {},
+  
+  // Don't use basePath or assetPrefix on Vercel
+  // Only use them for GitHub Pages static deployment
 };
 
 export default nextConfig;
