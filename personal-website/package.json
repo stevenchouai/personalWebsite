@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "cross-env TURBOPACK=0 next build",
-    "build:static": "cross-env TURBOPACK=0 NEXT_PUBLIC_BUILD_MODE=static next build",
+    "build": "next build",
+    "build:static": "cross-env NEXT_PUBLIC_BUILD_MODE=static next build",
     "start": "next start",
     "lint": "eslint"
   },

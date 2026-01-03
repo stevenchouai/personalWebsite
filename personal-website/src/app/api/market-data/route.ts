@@ -78,6 +78,14 @@ export async function GET(request: NextRequest) {
     // Get current quote for additional info using quoteSummary
     const quoteData = await yahooFinance.quoteSummary(symbol, { modules: ['price'] });
     const quote = quoteData.price;
+    
+    if (!quote) {
+      return NextResponse.json(
+        { error: "Failed to fetch quote data" },
+        { status: 404 }
+      );
+    }
+    
     console.log(`Quote fetched for ${symbol}:`, quote.shortName || quote.longName);
 
     // Calculate annualized returns for different periods

@@ -13,6 +13,11 @@ const nextConfig: NextConfig = {
   basePath: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
   assetPrefix: process.env.NODE_ENV === 'production' ? '/personalWebsite' : '',
   pageExtensions: ["ts", "tsx", "md", "mdx"],
+  
+  // Use webpack instead of turbopack for builds
+  webpack: (config) => {
+    return config;
+  },
 };
 
 export default nextConfig;
