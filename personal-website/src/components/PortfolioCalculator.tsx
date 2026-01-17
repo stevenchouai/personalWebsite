@@ -388,19 +388,14 @@ export function PortfolioCalculator() {
                     ))}
                   </Pie>
                   <Tooltip
-                    formatter={(
-                      value: number | string,
-                      _name: string,
-                      props: any,
-                    ) => {
-                      const v =
-                        typeof value === "number" ? value : Number(value);
-                      const p =
-                        typeof props?.payload?.percent === "number"
-                          ? props.payload.percent
-                          : 0;
+                    formatter={(value, _name, props) => {
+                      const numeric =
+                        typeof value === "number" ? value : Number(value ?? 0);
+                      const payload = (props as { payload?: { percent?: number } } | undefined)?.payload;
+                      const percent =
+                        typeof payload?.percent === "number" ? payload.percent : 0;
                       return [
-                        `${formatCurrency(v)} (${(p * 100).toFixed(1)}%)`,
+                        `${formatCurrency(numeric)} (${(percent * 100).toFixed(1)}%)`,
                         "市值",
                       ];
                     }}
@@ -513,21 +508,18 @@ export function PortfolioCalculator() {
                             ))}
                           </Pie>
                           <Tooltip
-                            formatter={(
-                              value: number | string,
-                              _name: string,
-                              props: any,
-                            ) => {
-                              const v =
+                            formatter={(value, _name, props) => {
+                              const numeric =
                                 typeof value === "number"
                                   ? value
-                                  : Number(value);
-                              const p =
-                                typeof props?.payload?.percent === "number"
-                                  ? props.payload.percent
+                                  : Number(value ?? 0);
+                              const payload = (props as { payload?: { percent?: number } } | undefined)?.payload;
+                              const percent =
+                                typeof payload?.percent === "number"
+                                  ? payload.percent
                                   : 0;
                               return [
-                                `${formatCurrency(v)} (${(p * 100).toFixed(1)}%)`,
+                                `${formatCurrency(numeric)} (${(percent * 100).toFixed(1)}%)`,
                                 "市值",
                               ];
                             }}
@@ -572,21 +564,18 @@ export function PortfolioCalculator() {
                             ))}
                           </Pie>
                           <Tooltip
-                            formatter={(
-                              value: number | string,
-                              _name: string,
-                              props: any,
-                            ) => {
-                              const v =
+                            formatter={(value, _name, props) => {
+                              const numeric =
                                 typeof value === "number"
                                   ? value
-                                  : Number(value);
-                              const p =
-                                typeof props?.payload?.percent === "number"
-                                  ? props.payload.percent
+                                  : Number(value ?? 0);
+                              const payload = (props as { payload?: { percent?: number } } | undefined)?.payload;
+                              const percent =
+                                typeof payload?.percent === "number"
+                                  ? payload.percent
                                   : 0;
                               return [
-                                `${formatCurrency(v)} (${(p * 100).toFixed(1)}%)`,
+                                `${formatCurrency(numeric)} (${(percent * 100).toFixed(1)}%)`,
                                 "市值",
                               ];
                             }}
