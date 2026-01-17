@@ -44,8 +44,10 @@ export function useMarketData(symbol: string) {
 
         const marketData = await response.json();
         setData(marketData);
-      } catch (err: any) {
-        setError(err.message || "An error occurred");
+      } catch (err) {
+        const message =
+          err instanceof Error ? err.message : "An error occurred";
+        setError(message);
         setData(null);
       } finally {
         setLoading(false);

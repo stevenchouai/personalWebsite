@@ -35,7 +35,14 @@ export default function ToolsPage() {
               className="h-full"
             />
 
-            {/* Placeholder for future tools */}
+            <CardLink
+              href="/tools/portfolio-calculator"
+              title="Portfolio Allocation"
+              description="Visualize your current holdings allocation and save snapshots over time."
+              meta="New"
+              className="h-full"
+            />
+
             <div className="card card-hover p-5 opacity-50">
               <div className="flex items-start justify-between gap-4">
                 <div>
@@ -45,20 +52,6 @@ export default function ToolsPage() {
                   <p className="muted mt-1 text-sm leading-6">
                     Calculate when you can achieve financial independence and
                     retire early.
-                  </p>
-                </div>
-                <div className="text-xs text-[var(--muted-2)]">Coming soon</div>
-              </div>
-            </div>
-
-            <div className="card card-hover p-5 opacity-50">
-              <div className="flex items-start justify-between gap-4">
-                <div>
-                  <h3 className="text-base font-semibold tracking-tight">
-                    Compound Interest
-                  </h3>
-                  <p className="muted mt-1 text-sm leading-6">
-                    See how your money grows over time with compound interest.
                   </p>
                 </div>
                 <div className="text-xs text-[var(--muted-2)]">Coming soon</div>
@@ -76,9 +69,9 @@ export default function ToolsPage() {
             <div className="space-y-4 text-sm leading-relaxed text-[var(--muted)]">
               <p>
                 These calculators are built to help you make informed investment
-                decisions. They're based on historical data and proven investment
-                strategies, but remember: past performance doesn't guarantee
-                future results.
+                decisions. They are based on historical data and proven
+                investment strategies, but remember: past performance does not
+                guarantee future results.
               </p>
               <p>
                 All tools are free, open-source, and require no sign-up. Your

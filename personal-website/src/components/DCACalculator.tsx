@@ -2,8 +2,6 @@
 
 import { useState, useMemo, useEffect } from "react";
 import {
-  LineChart,
-  Line,
   XAxis,
   YAxis,
   CartesianGrid,
@@ -84,7 +82,6 @@ export function DCACalculator() {
   // Search functionality
   useEffect(() => {
     if (searchQuery.length < 2) {
-      setSearchResults([]);
       return;
     }
 
@@ -166,8 +163,6 @@ export function DCACalculator() {
     return `${value >= 0 ? "+" : ""}${value.toFixed(2)}%`;
   };
 
-  const selectedAssetInfo = POPULAR_ASSETS.find(a => a.symbol === selectedAsset);
-
   return (
     <div className="space-y-8">
       {/* Asset Selection */}
@@ -218,7 +213,13 @@ export function DCACalculator() {
             <input
               type="text"
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => {
+                const value = e.target.value;
+                setSearchQuery(value);
+                if (value.length < 2) {
+                  setSearchResults([]);
+                }
+              }}
               placeholder="Search stocks, ETFs, crypto..."
               className="w-full rounded-lg border border-black/10 bg-white px-4 py-3 text-base focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
             />
@@ -354,7 +355,11 @@ export function DCACalculator() {
             </label>
             <select
               value={frequency}
-              onChange={(e) => setFrequency(e.target.value as any)}
+              onChange={(e) =>
+                setFrequency(
+                  e.target.value as "daily" | "weekly" | "monthly",
+                )
+              }
               className="w-full rounded-lg border border-black/10 bg-white px-4 py-3 text-base focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
             >
               <option value="daily">Daily</option>
@@ -386,7 +391,11 @@ export function DCACalculator() {
             {!useCustomReturn && marketData ? (
               <select
                 value={useHistoricalReturn}
-                onChange={(e) => setUseHistoricalReturn(e.target.value as any)}
+                onChange={(e) =>
+                  setUseHistoricalReturn(
+                    e.target.value as "1Y" | "3Y" | "5Y" | "10Y",
+                  )
+                }
                 className="w-full rounded-lg border border-black/10 bg-white px-4 py-3 text-base focus:border-[var(--accent)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)]/20"
               >
                 {marketData.annualReturn1Y !== 0 && (

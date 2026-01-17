@@ -118,10 +118,12 @@ export async function GET(request: NextRequest) {
     };
 
     return NextResponse.json(response);
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error fetching market data:", error);
+    const message =
+      error instanceof Error ? error.message : "Failed to fetch market data";
     return NextResponse.json(
-      { error: "Failed to fetch market data", details: error.message },
+      { error: "Failed to fetch market data", details: message },
       { status: 500 }
     );
   }
@@ -153,12 +155,13 @@ export async function POST(request: NextRequest) {
     }));
 
     return NextResponse.json({ results });
-  } catch (error: any) {
+  } catch (error) {
     console.error("Error searching assets:", error);
+    const message =
+      error instanceof Error ? error.message : "Failed to search assets";
     return NextResponse.json(
-      { error: "Failed to search assets", details: error.message },
+      { error: "Failed to search assets", details: message },
       { status: 500 }
     );
   }
 }
-
