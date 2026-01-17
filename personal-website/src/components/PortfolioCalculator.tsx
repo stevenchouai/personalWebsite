@@ -377,7 +377,7 @@ export function PortfolioCalculator() {
                     nameKey="name"
                     outerRadius="80%"
                     label={(entry) =>
-                      `${entry.name} ${entry.percentage.toFixed(1)}%`
+                      `${entry.name} ${entry.percent ? (entry.percent * 100).toFixed(1) : "0.0"}%`
                     }
                   >
                     {chartData.map((entry, index) => (
@@ -502,7 +502,7 @@ export function PortfolioCalculator() {
                             nameKey="name"
                             outerRadius="80%"
                             label={(entry) =>
-                              `${entry.name} ${entry.percentage.toFixed(1)}%`
+                              `${entry.name} ${entry.percent ? (entry.percent * 100).toFixed(1) : "0.0"}%`
                             }
                           >
                             {snapshotDataA.map((entry, index) => (
@@ -561,7 +561,7 @@ export function PortfolioCalculator() {
                             nameKey="name"
                             outerRadius="80%"
                             label={(entry) =>
-                              `${entry.name} ${entry.percentage.toFixed(1)}%`
+                              `${entry.name} ${entry.percent ? (entry.percent * 100).toFixed(1) : "0.0"}%`
                             }
                           >
                             {snapshotDataB.map((entry, index) => (
