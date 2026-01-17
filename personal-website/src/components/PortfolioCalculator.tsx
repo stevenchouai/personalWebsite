@@ -391,16 +391,16 @@ export function PortfolioCalculator() {
                     formatter={(
                       value: number | string,
                       _name: string,
-                      payload: { payload?: { percentage?: number } },
+                      props: any,
                     ) => {
                       const v =
                         typeof value === "number" ? value : Number(value);
                       const p =
-                        typeof payload?.payload?.percentage === "number"
-                          ? payload.payload.percentage
+                        typeof props?.payload?.percent === "number"
+                          ? props.payload.percent
                           : 0;
                       return [
-                        `${formatCurrency(v)} (${p.toFixed(1)}%)`,
+                        `${formatCurrency(v)} (${(p * 100).toFixed(1)}%)`,
                         "市值",
                       ];
                     }}
@@ -516,18 +516,18 @@ export function PortfolioCalculator() {
                             formatter={(
                               value: number | string,
                               _name: string,
-                              payload: { payload?: { percentage?: number } },
+                              props: any,
                             ) => {
                               const v =
                                 typeof value === "number"
                                   ? value
                                   : Number(value);
                               const p =
-                                typeof payload?.payload?.percentage === "number"
-                                  ? payload.payload.percentage
+                                typeof props?.payload?.percent === "number"
+                                  ? props.payload.percent
                                   : 0;
                               return [
-                                `${formatCurrency(v)} (${p.toFixed(1)}%)`,
+                                `${formatCurrency(v)} (${(p * 100).toFixed(1)}%)`,
                                 "市值",
                               ];
                             }}
@@ -575,18 +575,18 @@ export function PortfolioCalculator() {
                             formatter={(
                               value: number | string,
                               _name: string,
-                              payload: { payload?: { percentage?: number } },
+                              props: any,
                             ) => {
                               const v =
                                 typeof value === "number"
                                   ? value
                                   : Number(value);
                               const p =
-                                typeof payload?.payload?.percentage === "number"
-                                  ? payload.payload.percentage
+                                typeof props?.payload?.percent === "number"
+                                  ? props.payload.percent
                                   : 0;
                               return [
-                                `${formatCurrency(v)} (${p.toFixed(1)}%)`,
+                                `${formatCurrency(v)} (${(p * 100).toFixed(1)}%)`,
                                 "市值",
                               ];
                             }}
